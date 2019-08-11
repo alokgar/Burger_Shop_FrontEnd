@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>BBB</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="background">
+        <form onsubmit="return login()" action="bbb_account.html">
+        <div class="login">
+            <input id="input" style="border-color:black;" placeholder="Username">
+            <input id="password" style="border-color:black;"placeholder="Password" type="password"><br>
+            <label  id="label" style="color: red;visibility: hidden">please enter username & password correctly!</label><br>
+            <button style="border-radius: 5px;background-color: black;color: white"> login </button><br>
+            <a href="#" style="color: red">forgot password??</a>
+        </div>
+    </form>
+        <div class="top-right">
+            <button class="button">find us</button>
+            <button class="button">menu</button>
+            <button class="button">franchise</button>
+            <button class="button">contact </button>
+        </div>
+
+        <h1 id="id1"> <b>B</b>ig <b>B</b>elly <b>B</b>urger<br></br>
+       <span class="span"> order online </span></h1>
+
+        <br></br>
+        <br></br>
+
+        <p id="id2">. best burger in town .</p>
+        <div class="burgers"></div>
+            <div class="burger fade">
+                <img src="burger-1.jpg" style="width: 100%">
+            </div>
+            <div class="burger fade">
+                    <img src="burger-4.jpg" style="width: 100%">
+            </div>
+            <div class="burger fade">
+                    <img src="burger-5.jpg" style="width: 100%">
+            </div>
+            <div class="burger fade">
+                    <img src="burger-6.jpg" style="width: 100%">
+            </div>
+            <div class="burger fade">
+                    <img src="burger-7.jpg" style="width: 100%">
+            </div>
+            <div class="burger fade">
+                    <img src="burger-8.jpg" style="width: 100%">
+            </div>
+            <div class="burger fade">
+                    <img src="burger-9.jpg" style="width: 100%">
+            </div>
+        </div>
+        <img src="burger-2.jpg" style="width: 100%">
+        <img src="burger-10.jpg.jpg" style="width: 100%">
+
+        <div class="images">
+                <img src="trisha.jpg" style="width: 100%; height: 700px;">
+                <div  class="top-left">
+                    <input class="signup" placeholder="first name"><br>
+                    <input class="signup"placeholder="last name"><br>
+                    <input class="signup" placeholder="email address"><br><br>
+                    <button style="background-color: chartreuse;color:black;">signup</button><br><br>
+                    <img  id="cube"  src="cuberoll.gif" height="100px" width="100px">
+                </div>
+            </div>
+    </body>
+    <script>
+        var burgerindex=0;
+        burgershow();
+        function burgershow(){
+            var i;
+            var burgers=document.getElementsByClassName("burger");
+            for(i=0;i<burgers.length;i++){
+                burgers[i].style.display="none";
+            }
+            burgerindex++;
+            if(burgerindex>burgers.length)burgerindex=1;
+            burgers[burgerindex-1].style.display="block";
+            setTimeout(burgershow,4000);
+        }
+
+        function login(){
+            var input=document.getElementById("input");
+            var password=document.getElementById("password");
+            if(input.value.trim()==""){
+                input.style.border= "2px solid red";
+                document.getElementById("label").style.visibility="visible";
+                return false;
+            }
+            else if(password.value.trim()==""){
+                password.style.border= "2px solid red";
+                document.getElementById("label").style.visibility="visible";
+                return false;
+            }
+            else return true;
+
+        }
+    </script>
+</html>
